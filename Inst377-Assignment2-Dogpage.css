@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(182, 175, 253);
+}
+
+#header {
+    text-align: center;
+    background-color: rgba(169, 169, 169, 0.894);
+    padding: 5px;
+    margin-top: 0;
+    font-family:'Times New Roman';
+    clear:both;
+}
+
+#main-nav{
+    background-color:rgba(169, 169, 169, 0.894);
+    text-align: left;
+
+}
+
+#main-nav li{
+    display: inline-block;
+    position: center;
+}
+
+#main-nav ul li {
+    list-style-type: none;
+    text-align: center;
+    padding: 15px;
+  
+}
+
+#main-nav li:hover {
+    background-color: white;;
+    color: black;
+

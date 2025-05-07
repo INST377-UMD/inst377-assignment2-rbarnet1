@@ -1,0 +1,53 @@
+<html> 
+    <head> 
+        <title> Inst377 - Home Page </title>
+        <link rel="stylesheet" href="Inst377-Assignment2-Homepage.css">
+    </head>
+    <body> 
+         <!-- header section -->
+         <header id="header">
+            <h1>Inst377 - Actvities </h1>
+        </header>
+
+        <!-- navigation section -->
+            <nav id="main-nav">
+                <ul>
+                    <li> <a href="Inst377-Assignment2-HomePage.html" class="normal-text-link">Home</a></li>
+                    <li><a href="INST377-Assignment2-Stockpage.html" class="normal-text-link">Stocks</a></li>
+                    <li><a href="Inst377-Assignment2-Dogpage.html" class="normal-text-link">Dogs</a></li>
+                </ul>
+                    </nav>
+                    <h2> These are some different activites we can try !</h2>
+                    <br> 
+        <!-- Buttons -->
+        <a href="INST377-Assignment2-Stockpage.html"><button class="button-5" role="button">Stocks</button></a>
+        <a href="Inst377-Assignment2-Dogpage.html"><button class="button-6" role="button">Dogs</button></a>
+        <!-- quote -->
+        <div id="quote-box">
+            <p id="quote-text">Load quote</p>
+            <p id="quote-author"></p>
+          </div>
+        <!--JS-->
+          <script type="text/javascript">
+            const api_url = "https://zenquotes.io/api/quotes/";
+          
+            async function getQuote(url) {
+              try {
+                const response = await fetch(url);
+                const data = await response.json();
+                const quote = data[0].q;
+                const author = data[0].a;
+                document.getElementById("quote-text").textContent = `"${quote}"`;
+                document.getElementById("quote-author").textContent = `— ${author}`;
+              } catch (error) {
+                console.error("Error fetching quote:", error);
+                document.getElementById("quote-text").textContent = "Could not load quote.";
+              }
+            }
+          
+            getQuote(api_url);
+          </script>
+
+
+
+</html>
